@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "plants")
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 public class PlantEntity extends BaseEntity {
     @Column(name = "barcode", nullable = false, unique = false, updatable = true, length = 20)
     @Getter

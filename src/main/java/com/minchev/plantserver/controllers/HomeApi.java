@@ -14,12 +14,11 @@ import java.util.List;
 @RequestMapping("/api/plants")
 public class HomeApi {
 
-   @Autowired
-   PlantService plantService;
+    @Autowired
+    PlantService plantService;
 
 
-
-    @GetMapping(value="/all", produces = "application/json")
+    @GetMapping(value = "/all", produces = "application/json")
     public List<PlantListViewModel> allPlant() {
 
         return plantService.findAllPlants();

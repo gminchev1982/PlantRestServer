@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PlantService {
 
-     List<PlantListViewModel> findAllPlants();
+    List<PlantListViewModel> findAllPlants();
 
 
 }

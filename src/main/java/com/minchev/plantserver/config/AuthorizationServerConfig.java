@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 
 @Configuration
 @EnableAuthorizationServer
-public class AuthorizationServerConfig   extends AuthorizationServerConfigurerAdapter {
+public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -41,23 +41,23 @@ public class AuthorizationServerConfig   extends AuthorizationServerConfigurerAd
                 .withClient("clientapp")
                 .secret(passwordEncoder.encode("123456"))
                 .authorizedGrantTypes("password")
-                .authorities ("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER")
+                .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER")
                 .scopes("read", "write")
                 .autoApprove(true)
-              ;
+        ;
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 
         endpoints
-                 .authenticationManager(authenticationManager)
-                 .tokenStore (tokenStore);
+                .authenticationManager(authenticationManager)
+                .tokenStore(tokenStore);
 
     }
 
     @Bean
-    public TokenStore tokenStore () {
+    public TokenStore tokenStore() {
         return new InMemoryTokenStore();
     }
 }

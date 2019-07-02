@@ -21,14 +21,14 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository userRepository,
                            RoleService roleService,
                            ModelMapper modelMapper
-                           ) {
+    ) {
         this.userRepository = userRepository;
         this.roleService = roleService;
         this.modelMapper = modelMapper;
 
     }
 
-        @Override
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return this.userRepository
                 .findByUsername(username)

@@ -26,16 +26,14 @@ public class PlantServiceImpl implements PlantService {
 
     }
 
-       @Override
+    @Override
     public List<PlantListViewModel> findAllPlants() {
 
-            return this.plantRepository.findAll()
-                    .stream()
-                    .map(u -> this.modelMapper.map(u, PlantListViewModel.class))
-                    .collect(Collectors.toList());
+        return this.plantRepository.findAll()
+                .stream()
+                .map(u -> this.modelMapper.map(u, PlantListViewModel.class))
+                .collect(Collectors.toList());
     }
-
-
 
 
 }

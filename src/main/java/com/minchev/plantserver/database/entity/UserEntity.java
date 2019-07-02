@@ -84,7 +84,7 @@ public class UserEntity implements UserDetails {
                     referencedColumnName = "id"
             )
     )
-   //@Override
+    //@Override
     public Set<RoleEntity> getAuthorities() {
         return authorities;
     }
